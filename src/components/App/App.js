@@ -13,7 +13,7 @@ class App extends Component {
     this.getAllBooks();
   }
 
-  getAllBooks() {
+  getAllBooks = () => {
     axios
       .get('/books')
       .then((response) => {
@@ -28,14 +28,14 @@ class App extends Component {
         // surface message to user
         alert('Something went terribly wrong.');
       });
-  }
+  };
 
   render() {
     return (
       <div>
         <Header />
         <main className="container">
-          <BookForm />
+          <BookForm getCallback={this.getAllBooks} />
           <BookList />
         </main>
       </div>
