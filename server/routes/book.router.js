@@ -5,7 +5,7 @@ const pool = require('../modules/pool');
 
 // Get all books
 router.get('/', (req, res) => {
-  let queryText = 'SELECT title, author FROM "books" ORDER BY "title";';
+  let queryText = 'SELECT id, title, author FROM "books" ORDER BY "title";';
   pool
     .query(queryText)
     .then((result) => {

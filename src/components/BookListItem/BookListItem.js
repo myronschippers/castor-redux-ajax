@@ -2,7 +2,7 @@ import React from 'react';
 
 function BookListItem(props) {
   return (
-    <li key={props.book.id}>
+    <li>
       {props.book.title} by {props.book.author}
     </li>
   );

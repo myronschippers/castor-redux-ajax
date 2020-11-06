@@ -11,7 +11,7 @@ class BookList extends Component {
         <h2>All Books</h2>
         <ul>
           {this.props.store.bookList.map((item, index) => (
-            <BookListItem book={item} />
+            <BookListItem key={index} book={item} />
           ))}
         </ul>
       </section>

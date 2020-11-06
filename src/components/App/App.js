@@ -6,8 +6,30 @@ import './App.css';
 import Header from '../Header/Header';
 import BookList from '../BookList/BookList';
 import BookForm from '../BookForm/BookForm';
+import axios from 'axios';
 
 class App extends Component {
+  componentDidMount() {
+    this.getAllBooks();
+  }
+
+  getAllBooks() {
+    axios
+      .get('/books')
+      .then((response) => {
+        // setState => dispatch
+        this.props.dispatch({
+          type: 'SET_BOOKS',
+          payload: response.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        // surface message to user
+        alert('Something went terribly wrong.');
+      });
+  }
+
   render() {
     return (
       <div>
@@ -21,6 +43,4 @@ class App extends Component {
   }
 }
 
-const mapStoreToProps = (store) => ({ store });
-
-export default connect(mapStoreToProps)(App);
+export default connect()(App);
