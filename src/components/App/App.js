@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './App.css';
 
 // CUSTOM COMPONENTS
+import Header from '../Header/Header';
 import BookList from '../BookList/BookList';
 import BookForm from '../BookForm/BookForm';
 

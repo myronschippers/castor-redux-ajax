@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class BookListItem extends Component {
-  render() {
-    return (
-      <li key={index}>
-        {book.title} by {book.author}
-      </li>
-    );
-  }
+function BookListItem(props) {
+  return (
+    <li key={props.book.id}>
+      {props.book.title} by {props.book.author}
+    </li>
+  );
 }
 
 export default BookListItem;
